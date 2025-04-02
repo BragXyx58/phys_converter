@@ -15,7 +15,7 @@ class UnitConverterGUI:
         self.converters = self.load_converters('converters.json')
         self.converter = BaseConverter(self.converters)
 
-        self.selected_category = tk.StringVar(value="volume")
+        self.selected_category = tk.StringVar(value = list(self.converters.keys())[0])
         self.units = list(self.converters[self.selected_category.get()].keys())
 
         self.amount_label = tk.Label(root, text="Amount:")
